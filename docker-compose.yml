@@ -7,7 +7,7 @@ services:
     volumes:
       - .:/app
       - build:/app/dist
-    user: "1000:1000"  
+    user: "100000:100000"  
     command: sh -c "bun install && bun run build"
 
   web:
