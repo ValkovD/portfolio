@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+export interface Props {
+    header: string;
+}
+const { header } = Astro.props;
+---
+
+<Layout>
+    <div
+        class="w-full max-w-[92%] h-[100%] flex flex-col justify-between items-center"
+    >
+        <!-- Header Education -->
+        <header
+            class="w-full flex items-center justify-center max-w-[100vw] h-[10vh] max-md:max-w-[90%] max-md:h-[8vh] bg-primary text-center rounded-md shadow-acent"
+        >
+            <p
+                class="text-secondary text-shadow-secondary text-49 max-md:text-49md max-sm:text-49sm font-black font-orbitron"
+            >
+                {header}
+            </p>
+        </header>
+        <!-- div with 3 components Bachelor | Working With | Master -->
+        <!-- <main class="w-[100%] h-[85%] flex justify-between"> -->
+        <slot />
+        <!-- </main> -->
+    </div>
+</Layout>

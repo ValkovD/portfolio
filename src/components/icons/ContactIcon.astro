@@ -1,0 +1,13 @@
+---
+const { class: className } = Astro.props;
+---
+
+<a href="/contact" class="w-full h-full flex justify-center items-center">
+    <div
+        class:list={[
+            "w-[75%] h-[75%] bg-[url(../assets/mono_icons/mail-50_gray.png)] bg-no-repeat bg-center bg-contain hover:bg-[url(../assets/mono_icons/mail-50_orange.png)] hover:scale-120 transition duration-300",
+            className,
+        ]}
+    >
+    </div>
+</a>

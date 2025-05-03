@@ -1,0 +1,30 @@
+// @use'variables.scss';
+
+$widthSM: calc(100vw / 5);
+
+$widthLG: calc(100vw / 3);
+
+
+.circle-small {
+  width: $widthSM;
+  height: $widthSM;
+  background: url('/src/assets/meImg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  float: left;
+  margin: 5px;
+}
+
+.circle-large {
+  width: $widthLG;
+  height: $widthLG;
+  background: url('/src/assets/meImg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  float: left;
+  margin: 5px;
+}

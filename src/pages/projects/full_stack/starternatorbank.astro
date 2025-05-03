@@ -1,0 +1,41 @@
+---
+import ProjectItem from "../../../components/ProjectItem.astro";
+import UnderConstruction from "../../../components/UnderConstruction.astro";
+import Layout from "../../../layouts/Layout.astro";
+const desc =
+    "This is a full-stack MERN application with a Node.js and Express backend connected to MongoDB via Mongoose. It features JWT-based authentication, password hashing with bcryptjs, and input validation using express-validator. The project uses the config package for environment-based settings and supports CORS for cross-origin communication. Development is streamlined with Nodemon for live reloading and Concurrently to run both the server and the React client simultaneously. It’s structured for scalability and clean separation of concerns.";
+import sampleVideo from "../../../assets/video/videoplayback.mp4";
+const iconsArray = [
+    {
+        src: "/color_icons/ReactBootstrap.svg",
+        name: "React-Bootsrap",
+    },
+    {
+        src: "/color_icons/Express.svg",
+        name: "Express",
+    },
+    {
+        src: "/color_icons/NodeJs.svg",
+        name: "Node JS",
+    },
+    {
+        src: "/color_icons/Mongoose.js.svg",
+        name: "Mongoose",
+    },
+    {
+        src: "/color_icons/MongoDB.svg",
+        name: "Mongo DB",
+    },
+];
+---
+
+<Layout>
+    <ProjectItem
+        projectName={"StarterNator Bank"}
+        projectDescription={desc}
+        videoSrc={sampleVideo}
+        icons={iconsArray}
+        webLink="https://www.waiting depolyment.com/"
+        gitLink="https://github.com/ValkovD/StarterNator-Bank"
+    />
+</Layout>

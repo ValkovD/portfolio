@@ -1,0 +1,49 @@
+---
+import Nav from "../components/Nav.astro";
+import { ClientRouter } from "astro:transitions";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en" transition:name="root" transition:animate="initial">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/Favicon_Original.ico" />
+
+		<meta name="generator" content={Astro.generator} />
+		<title class="font-orbitron">pDe.(IT)</title>
+		<ClientRouter />
+	</head>
+	<body class="bg-gradient">
+		<main
+			class="w-[100%] h-[90vh] max-md:h-auto max-sm:h-auto p-4 max-sm:p-2 flex justify-between"
+		>
+			<Nav />
+			<slot />
+		</main>
+		<footer class="flex justify-center">
+			<img
+				class="w-[5%] h-[5%] max-md:w-[25%] max-md:h-[25%] max-sm:w-[30%] max-sm:h-[30%] self-end"
+				src="/GrayLogo.png"
+				alt="logo"
+			/>
+		</footer>
+	</body>
+</html>
+
+<style>
+	@media (min-width: 768px) {
+		html {
+			width: 100%;
+			height: 100%;
+		}
+
+		body {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			box-sizing: border-box;
+		}
+	}
+</style>

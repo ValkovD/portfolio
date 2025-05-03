@@ -1,0 +1,15 @@
+---
+import LayoutHeader from "../../layouts/LayoutHeader.astro";
+import FullStack from "../../components/projects_page/FullStack.astro";
+import FrontEnd from "../../components/projects_page/FrontEnd.astro";
+---
+
+<!-- Index at Projects Page -->
+<LayoutHeader header="Projects">
+    <div
+        class="w-[100%] h-[85%] flex justify-between max-md:flex-col max-md:justify-between items-center"
+    >
+        <FullStack />
+        <FrontEnd />
+    </div>
+</LayoutHeader>

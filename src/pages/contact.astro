@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Details from "../components/contact_page/Details.astro";
+import SendMsgForm from "../components/contact_page/SendMsgForm.astro";
+import LayoutHeader from "../layouts/LayoutHeader.astro";
+---
+
+<LayoutHeader header="Contact">
+    <div
+        class="w-[100%] h-[85%] flex justify-around max-md:flex-col max-md:justify-between items-center"
+    >
+        <Details />
+        <!-- Send Message form -->
+        <SendMsgForm />
+    </div>
+</LayoutHeader>

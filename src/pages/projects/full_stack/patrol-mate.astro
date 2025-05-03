@@ -1,0 +1,42 @@
+---
+import ProjectItem from "../../../components/ProjectItem.astro";
+import UnderConstruction from "../../../components/UnderConstruction.astro";
+import Layout from "../../../layouts/Layout.astro";
+const desc =
+    "This project is a modular, full-stack web application built using the MERN stack, featuring a React frontend and two independent Express.js backend services — one focused on user authentication and another dedicated to job tracking and analytics. The architecture is designed around a service-oriented structure, ensuring scalability, flexibility, and clear separation of responsibilities across components.";
+import sampleVideo from "../../../assets/video/videoplayback.mp4";
+const iconsArray = [
+    {
+        src: "/color_icons/React.svg",
+        name: "React",
+    },
+    {
+        src: "/color_icons/Express.svg",
+        name: "Express",
+    },
+    {
+        src: "/color_icons/Bun.svg",
+        name: "Bun",
+    },
+    {
+        src: "/color_icons/Mongoose.js.svg",
+        name: "Mongoose",
+    },
+    {
+        src: "/color_icons/MongoDB.svg",
+        name: "Mongo DB",
+    },
+];
+---
+
+<Layout>
+    <ProjectItem
+        projectName={"Patrol Mate"}
+        projectDescription={desc}
+        videoSrc={sampleVideo}
+        icons={iconsArray}
+        webLink="https://www.google.com/"
+        gitLink="https://github.com/ValkovD/job_counter"
+    />
+    <!-- <UnderConstruction /> -->
+</Layout>

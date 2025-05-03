@@ -1,0 +1,12 @@
+---
+// const { props } = Astro.props;
+const { src, alt, width, height } = Astro.props;
+---
+
+<img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    class="max-sm:w-[70vw] bg-secondaryLight p-2 max-sm:p-[2px] rounded-sm"
+/>

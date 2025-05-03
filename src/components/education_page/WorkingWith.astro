@@ -1,0 +1,65 @@
+---
+import ColorIcon from "../ColorIcon.astro";
+const icons = [
+    { src: "/color_icons/NPM.svg", alt: "npmIcon" },
+    { src: "/color_icons/Git.svg", alt: "gitIcon" },
+    { src: "/color_icons/GitHub.svg", alt: "gitHubIcon" },
+    { src: "/color_icons/VS_Code.svg", alt: "vscodeIcon" },
+    { src: "/color_icons/Linux.svg", alt: "linuxIcon" },
+    { src: "/color_icons/Ubuntu.svg", alt: "ubuntuIcon" },
+    { src: "/color_icons/Windows.svg", alt: "windowsIcon" },
+    { src: "/color_icons/C++.svg", alt: "c++Icon" },
+    { src: "/color_icons/Arduino.svg", alt: "arduinoIcon" },
+    { src: "/color_icons/Python.svg", alt: "pythonIcon" },
+    { src: "/color_icons/JavaScript.svg", alt: "javascriptIcon" },
+    { src: "/color_icons/HTML5.svg", alt: "HTML5icon" },
+    { src: "/color_icons/CSS3.svg", alt: "css3icon" },
+    { src: "/color_icons/Astro.svg", alt: "astroIcon" },
+    { src: "/color_icons/React.svg", alt: "reactIcon" },
+    {
+        src: "/color_icons/ReactBootstrap.svg",
+        alt: "reactBootstrapIcon",
+    },
+    { src: "/color_icons/TailwindCSS.svg", alt: "tailwindIcon" },
+    { src: "/color_icons/Bootstrap.svg", alt: "bootsrapIcon" },
+    { src: "/color_icons/Figma.svg", alt: "figmaIcon" },
+    { src: "/color_icons/NodeJs.svg", alt: "nodejsIcon" },
+    { src: "/color_icons/Express.svg", alt: "expressIcon" },
+    { src: "/color_icons/Bun.svg", alt: "bunIcon" },
+    { src: "/color_icons/Mongoose.js.svg", alt: "mongooseIcon" },
+    { src: "/color_icons/MongoDB.svg", alt: "mongoDBIcon" },
+];
+---
+
+<!-- Working With -->
+<div
+    class="w-full max-w-[30%] h-[100%] max-md:max-w-[90%] max-md:h-fit max-md:mt-4 max-sm:mt-4 p-4 bg-primary flex flex-col items-center justify-around rounded-md shadow-acent"
+>
+    <header>
+        <p
+            class="font-orbitron text-39 max-md:text-39md max-sm:text-39sm text-acentOrange font-black"
+        >
+            Working With
+        </p>
+    </header>
+    <div
+        class="w-[20%] h-[17%] bg-[url(/src/assets/mono_icons/working_100_gray.png)] bg-no-repeat bg-center bg-contain"
+    >
+    </div>
+    <div
+        class="w-[100%] h-[60%] grid grid-cols-6 gap-2 max-md:h-fit max-sm:grid-cols-4 max-sm:gap-4 justify-items-center content-stretch"
+    >
+        {
+            icons.map((icon, icon3) => {
+                return (
+                    <ColorIcon
+                        src={icon.src}
+                        alt={icon.alt}
+                        width={"50vw"}
+                        height={"50vh"}
+                    />
+                );
+            })
+        }
+    </div>
+</div>

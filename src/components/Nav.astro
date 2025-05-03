@@ -1,0 +1,99 @@
+---
+import HomeIcon from "./icons/HomeIcon.astro";
+import AboutIcon from "./icons/AboutIcon.astro";
+import ProjectsIcon from "./icons/ProjectsIcon.astro";
+import EducationIcon from "./icons/EducationIcon.astro";
+import WorkExpIcon from "./icons/WorkExpIcon.astro";
+import ContactIcon from "./icons/ContactIcon.astro";
+import DownloadCVIcon from "./icons/DownloadCVIcon.astro";
+import IconToolTip from "./icons/IconToolTip.astro";
+import { matchPattern } from "astro/dist/assets/utils";
+const { pathname } = Astro.url;
+// sub path is an Array returned from match method
+let subpath: any = [];
+subpath = pathname.match(/[^\/]+/g) || [];
+---
+
+<!-- Component: Nav -->
+<ul
+	class="w-full max-w-[4.5%] h-[95vh] max-sm:max-w-[12%] max-sm:h-[80vh] max-md:sticky max-md:top-0 max-md:max-w-[10%] max-lg:max-w-[6%] bg-primary flex flex-col justify-around items-center rounded-md shadow-acent"
+>
+	<!-- home -->
+	<li
+		class="group relative w-[90%] h-[8%] hover:bg-secondaryLight hover:rounded-md flex items-center"
+	>
+		<HomeIcon
+			class={pathname === "/"
+				? "bg-[url(../assets/mono_icons/home_orange.svg)]"
+				: ""}
+		/>
+		<IconToolTip text="Home" />
+	</li>
+	<!-- About-->
+	<li
+		class="group relative w-[90%] h-[8%] hover:bg-secondaryLight hover:rounded-md flex items-center"
+	>
+		<AboutIcon
+			class={pathname === "/about"
+				? "bg-[url(../assets/mono_icons/about-me-50_orange.png)]"
+				: ""}
+		/>
+		<IconToolTip text="About" />
+	</li>
+
+	<!-- work exp -->
+	<li
+		class="group relative w-[90%] h-[8%] hover:bg-secondaryLight hover:rounded-md flex items-center"
+	>
+		<WorkExpIcon
+			class={pathname === "/workexperience"
+				? "bg-[url(../assets/mono_icons/work-experience-50_orange.png)]"
+				: ""}
+		/>
+		<IconToolTip text="Experience" />
+	</li>
+	<!-- education -->
+	<li
+		class="group relative w-[90%] h-[8%] hover:bg-secondaryLight hover:rounded-md flex items-center"
+	>
+		<EducationIcon
+			class={pathname === "/education"
+				? "bg-[url(../assets/mono_icons/education-50_orange.png)]"
+				: ""}
+		/>
+		<IconToolTip text="Education" />
+	</li>
+	<!-- contact -->
+	<li
+		class="group relative w-[90%] h-[8%] hover:bg-secondaryLight hover:rounded-md flex items-center"
+	>
+		<ContactIcon
+			class={pathname === "/contact"
+				? "bg-[url(../assets/mono_icons/mail-50_orange.png)]"
+				: ""}
+		/>
+		<IconToolTip text="Contact" />
+	</li>
+	<!-- projects -->
+	<li
+		class="group relative w-[90%] h-[8%] hover:bg-secondaryLight hover:rounded-md flex items-center"
+	>
+		<ProjectsIcon
+			class={pathname === "/projects" || subpath.length > 1
+				? "bg-[url(../assets/mono_icons/code-50_orange.png)]"
+				: ""}
+		/>
+		<IconToolTip text="Projects" />
+	</li>
+	<!-- cv -->
+	<li
+		class="group relative w-[90%] h-[8%] hover:bg-secondaryLight hover:rounded-md flex items-center"
+	>
+		<DownloadCVIcon
+			class={pathname === "/downloadcv"
+				? "bg-[url(../assets/mono_icons/cv-50_orange.png)]"
+				: ""}
+		/>
+		<IconToolTip text="Download" />
+	</li>
+</ul>

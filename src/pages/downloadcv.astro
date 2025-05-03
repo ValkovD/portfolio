@@ -1,0 +1,25 @@
+---
+import UnderConstruction from "../components/UnderConstruction.astro";
+import LayoutHeader from "../layouts/LayoutHeader.astro";
+---
+
+<LayoutHeader header="Download CV">
+    <!-- <UnderConstruction /> -->
+    <div
+        class="w-[100%] h-[85%] flex flex-col items-center font-code font-bold text-39 max-sm:text-39sm"
+    >
+        <h2>Click on the icon below</h2>
+        <p>to</p>
+        <h2>Download my CV</h2>
+        <a
+            href="/Deyan_Valkov_CV.pdf"
+            download=""
+            class="w-[5vw] h-[5vh] max-sm:w-[20vw] h-[20vh] flex justify-center items-center"
+        >
+            <div
+                class="w-[75%] h-[75%] bg-[url(../assets/mono_icons/download-file-100-orange.png)] bg-no-repeat bg-center bg-contain hover:scale-120 transition duration-300 download"
+            >
+            </div>
+        </a>
+    </div>
+</LayoutHeader>

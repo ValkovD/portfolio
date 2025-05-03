@@ -1,0 +1,39 @@
+---
+const { data = [] } = Astro.props;
+const { header, start, end,web, positions = [] } = data;
+---
+
+<div
+    class="w-full max-w-[30%] h-[100%] max-md:max-w-[90%] max-md:h-fit   max-md:mt-4 max-sm:mt-4 p-4 bg-primary flex flex-col items-center rounded-md shadow-acent"
+>
+    <header class="font-orbitron text-39 max-md:text-39md max-sm:text-39sm  text-acentOrange font-black">
+        {header}
+    </header>
+    <!-- Period -->
+    <div
+        class="w-full max-w-[100%] text-secondary text-24 max-md:text-24md  max-sm:text-24sm font-code text-center"
+    >
+        <span>{start}</span>
+        <span>to</span>
+        <span>{end}</span>
+    </div>
+    <!-- Positions -->
+     <div>
+        {
+            positions.map((position) => {
+                return (
+                <li class="list-none text-20 max-md:text-20md max-sm:text-20sm   font-bold text-secondary mb-1">{position.title}</li>
+                <p class="list-none text-16 max-md:text-16md max-sm:text-16sm    text-secondary mb-4">{position.description}</p>
+            )
+            })
+        }
+     </div>
+     <a
+     class="px-4 font-code text-16 max-md:text-16md max-sm:text-16sm text-secondary rounded-sm hover:text-acentOrange hover:bg-secondaryLight hover:scale-110 transition duration-200"
+     href={web}
+     target="_blank"
+     ><span class="text-acentOrange font-code"
+         >{header} @
+     </span>{web}</a
+ >
+</div>

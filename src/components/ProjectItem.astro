@@ -1,0 +1,87 @@
+---
+import ColorIcon from "./ColorIcon.astro";
+import UnderConstruction from "./UnderConstruction.astro";
+
+const { projectName, projectDescription, videoSrc, icons, webLink, gitLink } =
+    Astro.props;
+---
+
+<div
+    class="w-full max-w-[100%] h-[100%] max-md:max-w-[90%] flex items-center justify-around max-md:flex-col"
+>
+    <div
+        class="w-full max-w-[45%] h-[100%] max-md:max-w-[90%] flex flex-col items-center justify-between text-secondary"
+    >
+        <div
+            class="w-full max-w-[100%] h-[80%] p-4 bg-primary flex flex-col justify-between items-center rounded-md shadow-acent"
+        >
+            <!-- Project info -->
+            <header
+                class="text-49 max-md:text-49md max-sm:text-49sm text-acentOrange font-orbitron font-black text-shadow-acent"
+            >
+                {projectName}
+            </header>
+
+            <div
+                class="text-center text-24 max-md:text-24md max-sm:text-24sm text-secondary font-code font-medium"
+            >
+                {projectDescription}
+            </div>
+            <!-- links to project and code in git -->
+            <div
+                class="text-center text-20 max-md:text-20md max-sm:text-16sm text-secondary font-code font-medium"
+            >
+                <a
+                    class="px-4 rounded-sm hover:text-acentOrange hover:bg-secondaryLight hover:scale-110 transition duration-200"
+                    href={webLink}
+                    target="_blank"
+                    ><span class="text-acentOrange">Try it @</span>
+                    {webLink}
+                </a>
+                <p></p>
+                <a
+                    class="px-4 rounded-sm hover:text-acentOrange hover:bg-secondaryLight hover:scale-104 transition duration-200"
+                    href={gitLink}
+                    target="_blank"
+                >
+                    <span class="text-acentOrange">Git repo @</span>
+                    My GitHub
+                </a>
+            </div>
+        </div>
+        <!-- Tech Stack Icons -->
+        <div
+            class="w-full max-w-[100%] h-[20%] max-md:h-fit mt-4 p-2 bg-primary flex justify-around items-center rounded-md shadow-acent"
+        >
+            {
+                icons.map((icon) => {
+                    return (
+                        <div class="w-full max-w-[15%] h-[60%] max-md:w-[8%] max-md:h-[20%] max-sm:bg-secondaryLight max-sm:w-[18%] max-sm:h-[23%] flex flex-col items-center text-center ">
+                            <ColorIcon
+                                src={icon.src}
+                                alt={icon.alt}
+                                width={"80vw"}
+                                height={"80vh"}
+                            />
+                            <p class="font-code text-18 max-md:text-16md max-sm:text-18sm max-md:hidden">
+                                {icon.name}
+                            </p>
+                        </div>
+                    );
+                })
+            }
+        </div>
+    </div>
+
+    <!-- Video Mock  -->
+    <div
+        class="w-full max-w-[45%] h-[100%] max-md:max-w-[90%] max-md:mt-4 p-6 bg-primary flex flex-col justify-around items-center rounded-md shadow-acent"
+    >
+        <!-- <video controls class="w-full max-w-[100%] h-[100%] rounded-md">
+            <source src={videoSrc} />
+            Your browser does not support the video tag.
+        </video> -->
+        <h2 class="text-acentOrange">Video coming Soon.....</h2>
+        <!-- <UnderConstruction /> -->
+    </div>
+</div>

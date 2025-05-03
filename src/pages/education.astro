@@ -1,0 +1,17 @@
+---
+import Bachelor from "../components/education_page/Bachelor.astro";
+import WorkingWith from "../components/education_page/WorkingWith.astro";
+import Master from "../components/education_page/Master.astro";
+import Layout from "../layouts/Layout.astro";
+import LayoutHeader from "../layouts/LayoutHeader.astro";
+---
+
+<LayoutHeader header="Education">
+  <div
+    class="w-[100%] h-[85%] flex justify-around max-md:flex-col max-md:justify-between items-center"
+  >
+    <Bachelor />
+    <WorkingWith />
+    <Master />
+  </div>
+</LayoutHeader>

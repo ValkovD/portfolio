@@ -1,0 +1,42 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/circleImg.scss";
+---
+
+<Layout>
+    <!-- Image -->
+    <div
+        class="max-sm:max-w-[88%] max-sm:h-fit flex justify-around max-md:flex-col max-md:justify-between items-center"
+    >
+        <div
+            class="w-full max-w-[35%] h-[100%] max-md:max-w-[90%] max-md:h-fit flex justify-around items-center"
+        >
+            <div class="circle-large"></div>
+        </div>
+
+        <!-- About me -->
+        <div
+            class="w-full max-w-[48%] h-[100%] max-md:max-w-[90%] max-md:h-fit max-sm:max-w-[90%] max-sm:h-fit p-6 bg-primary flex flex-col justify-around items-center rounded-md shadow-acent"
+        >
+            <header
+                class="text-acentOrange text-39 max-md:text-39md max-sm:text-39sm font-orbitron font-black"
+            >
+                About Me
+            </header>
+            <p
+                class="text-secondary text-30 max-md:text-30md max-sm:text-30sm text-center font-code"
+            >
+                I’m Deyan, a self-taught full-stack web developer based in the
+                UK, with a strong focus on building efficient, scalable, and
+                user-centric web applications. Through independent learning and
+                hands-on experience, I’ve developed a solid command of the MERN
+                stack and a deep understanding of modern development practices.
+                I take pride in writing clean, maintainable code, solving
+                complex problems, and continuously improving my skill set. From
+                front-end design to back-end architecture, I bring dedication,
+                adaptability, and a strong work ethic to every project I take
+                on.
+            </p>
+        </div>
+    </div>
+</Layout>

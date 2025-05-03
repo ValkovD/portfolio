@@ -1,0 +1,65 @@
+---
+import ExperienceItem from "../components/ExperienceItem.astro";
+import UnderConstruction from "../components/UnderConstruction.astro";
+import LayoutHeader from "../layouts/LayoutHeader.astro";
+
+const fordBg = {
+    header: "Ford Bulgaria",
+    start: 2004,
+    end: 2012,
+    web: "https://www.motopfohe.bg/",
+    positions: [
+        {
+            title: "Mechanic",
+            description:
+                "Diagnoses, repairs, and maintains vehicles by inspecting mechanical and electrical components. Performs routine servicing, troubleshooting issues, and ensuring all systems function correctly to enhance safety, efficiency, and longevity of the vehicle. Works with tools, diagnostic equipment, and repair manuals daily.",
+        },
+        {
+            title: "Service Advisor",
+            description:
+                "Serves as the main point of contact between customers and the repair team. Assesses vehicle issues, provides cost estimates, schedules maintenance, and ensures clear communication between mechanics and clients. Aims to enhance customer experience and streamline the repair process.",
+        },
+        {
+            title: "Spare Parts",
+            description:
+                "Oversees inventory, sourcing, and distribution of automotive spare parts to ensure smooth repair operations. Works closely with mechanics, suppliers, and customers to provide the right components for maintenance. Maintains stock levels and ensures compatibility with various vehicle models.",
+        },
+    ],
+};
+const fordUk = {
+    header: "Ford UK",
+    start: 2012,
+    end: 2015,
+    web: "https://www.trustford.co.uk/",
+    positions: [
+        {
+            title: "Master Tech - Diagnostics",
+            description:
+                "A highly skilled automotive specialist with expertise in advanced vehicle diagnostics, troubleshooting, and repair. Utilizes cutting-edge diagnostic tools to identify complex mechanical, electrical, and software-related issues in modern vehicles. Possesses deep knowledge of engine management systems, transmissions, hybrid and EV technologies, and electronic control units (ECUs). Works closely with engineers, service advisors, and technicians to ensure accurate fault identification and effective repairs. Continuously updates knowledge on the latest automotive advancements, ensuring vehicles meet manufacturer standards for performance, safety, and efficiency.",
+        },
+    ],
+};
+const aaUk = {
+    header: "AA UK",
+    start: 2012,
+    end: "Sep 2025",
+    web: "https://www.theaa.com/",
+    positions: [
+        {
+            title: "RSS Roadside Patrol - Problem Solver",
+            description:
+                "A highly skilled and adaptive roadside patrol expert, delivering rapid, reliable, and customer-focused assistance. Handles a wide range of vehicle issues, from breakdowns to minor repairs, ensuring drivers get back on the road quickly. Expert in troubleshooting mechanical, electrical, and diagnostic faults under pressure. Works flexibly in all conditions, providing professional service with a problem-solving mindset. Communicates clearly with customers, offering reassurance and expert advice. Dedicated to exceptional service, efficiency, and safety in roadside assistance operations.",
+        },
+    ],
+};
+---
+
+<LayoutHeader header="Work Experience">
+    <div
+        class="w-[100%] h-[85%] flex justify-between max-md:flex-col max-md:justify-between items-center"
+    >
+        <ExperienceItem data={aaUk} />
+        <ExperienceItem data={fordUk} />
+        <ExperienceItem data={fordBg} />
+    </div>
+</LayoutHeader>
