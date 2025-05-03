@@ -6,8 +6,8 @@ services:
     working_dir: /app
     volumes:
       - .:/app
-      - build:/app/dist
-    command: sh -c "bun install && bun run build"
+    command: sh
+    tty: true
 
   web:
     image: nginx:alpine
