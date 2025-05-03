@@ -16,7 +16,6 @@ services:
       - builder
     volumes:
       - build:/usr/share/nginx/html:ro
-    user: "1000:1000"  
     ports:
       - "8080:80"
     networks:
