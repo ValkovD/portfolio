@@ -1,10 +1,11 @@
 # Stage 1: Build the Astro site using Bun
-FROM bunsh/bun:latest AS builder
+FROM oven/bun:latest AS builder
 
 WORKDIR /app
 
 # Copy package.json, bun.lockb, and install dependencies with Bun
-COPY package.json bun.lockb ./
+COPY package.json ./
+COPY bun.lockb ./
 RUN bun install
 
 # Copy the rest of the source code
