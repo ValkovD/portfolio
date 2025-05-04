@@ -4,6 +4,8 @@ services:
   portfolio:
     build: .
     container_name: portfolio
+    ports:
+      - "5000:80" # Expose port 5000 on the VPS, internal port 80 for Nginx
     networks:
       - nginx_proxy_manager_default
     restart: always
