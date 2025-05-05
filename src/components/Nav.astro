@@ -8,10 +8,11 @@ import ContactIcon from "./icons/ContactIcon.astro";
 import DownloadCVIcon from "./icons/DownloadCVIcon.astro";
 import IconToolTip from "./icons/IconToolTip.astro";
 import { matchPattern } from "astro/dist/assets/utils";
-const { pathname } = Astro.url;
+const { pathname, hostname } = Astro.url;
 // sub path is an Array returned from match method
 let subpath: any = [];
 subpath = pathname.match(/[^\/]+/g) || [];
+// console.log(pathname);
 ---
 
 <!-- Component: Nav -->
@@ -23,7 +24,7 @@ subpath = pathname.match(/[^\/]+/g) || [];
 		class="group relative w-[90%] h-[8%] hover:bg-secondaryLight hover:rounded-md flex items-center"
 	>
 		<HomeIcon
-			class={pathname === "/"
+			class={pathname === import.meta.env.PUBLIC_DOMAIN
 				? "bg-[url(../assets/mono_icons/home_orange.svg)]"
 				: ""}
 		/>
@@ -34,7 +35,7 @@ subpath = pathname.match(/[^\/]+/g) || [];
 		class="group relative w-[90%] h-[8%] hover:bg-secondaryLight hover:rounded-md flex items-center"
 	>
 		<AboutIcon
-			class={pathname === "/about"
+			class={pathname === `${import.meta.env.PUBLIC_DOMAIN}/about`
 				? "bg-[url(../assets/mono_icons/about-me-50_orange.png)]"
 				: ""}
 		/>
@@ -46,7 +47,8 @@ subpath = pathname.match(/[^\/]+/g) || [];
 		class="group relative w-[90%] h-[8%] hover:bg-secondaryLight hover:rounded-md flex items-center"
 	>
 		<WorkExpIcon
-			class={pathname === "/workexperience"
+			class={pathname ===
+			`${import.meta.env.PUBLIC_DOMAIN}/workexperience`
 				? "bg-[url(../assets/mono_icons/work-experience-50_orange.png)]"
 				: ""}
 		/>
@@ -57,7 +59,7 @@ subpath = pathname.match(/[^\/]+/g) || [];
 		class="group relative w-[90%] h-[8%] hover:bg-secondaryLight hover:rounded-md flex items-center"
 	>
 		<EducationIcon
-			class={pathname === "/education"
+			class={pathname === `${import.meta.env.PUBLIC_DOMAIN}/education`
 				? "bg-[url(../assets/mono_icons/education-50_orange.png)]"
 				: ""}
 		/>
@@ -68,7 +70,7 @@ subpath = pathname.match(/[^\/]+/g) || [];
 		class="group relative w-[90%] h-[8%] hover:bg-secondaryLight hover:rounded-md flex items-center"
 	>
 		<ContactIcon
-			class={pathname === "/contact"
+			class={pathname === `${import.meta.env.PUBLIC_DOMAIN}/contact`
 				? "bg-[url(../assets/mono_icons/mail-50_orange.png)]"
 				: ""}
 		/>
@@ -79,7 +81,8 @@ subpath = pathname.match(/[^\/]+/g) || [];
 		class="group relative w-[90%] h-[8%] hover:bg-secondaryLight hover:rounded-md flex items-center"
 	>
 		<ProjectsIcon
-			class={pathname === "/projects" || subpath.length > 1
+			class={pathname === `${import.meta.env.PUBLIC_DOMAIN}/projects` ||
+			subpath.length > 1
 				? "bg-[url(../assets/mono_icons/code-50_orange.png)]"
 				: ""}
 		/>
@@ -90,7 +93,7 @@ subpath = pathname.match(/[^\/]+/g) || [];
 		class="group relative w-[90%] h-[8%] hover:bg-secondaryLight hover:rounded-md flex items-center"
 	>
 		<DownloadCVIcon
-			class={pathname === "/downloadcv"
+			class={pathname === `${import.meta.env.PUBLIC_DOMAIN}/downloadcv`
 				? "bg-[url(../assets/mono_icons/cv-50_orange.png)]"
 				: ""}
 		/>
