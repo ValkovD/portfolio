@@ -1,13 +1,47 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import ProjectItem from "../../../components/ProjectItem.astro";
+import sampleVideo from "../../../assets/video/starternatorVideo.webm";
 import UnderConstruction from "../../../components/UnderConstruction.astro";
+// const desc =
+//     "Expense tracker application built with Vanilla JavaScript, HTML, and CSSArchitecture highlights:Uses browser local storage as a lightweight client-side database Separated into independent modules for UI rendering, data management, and app control UI controller dynamically updates the DOM and handles user interaction Data controller manages expense records and storage operations Central app controller coordinates communication between modules and contains the core business logic Designed to demonstrate understanding of modular JavaScript architecture and clean development practices.";
+const title = "Application built with Vanilla JavaScript, HTML, and CSS.";
+const items = [
+    "Uses browser local storage for persistent data",
+    "Modular structure separating UI, data management, and app logic",
+    "UI controller handles DOM rendering and user interactions",
+    "Data controller manages CRUD operations and storage",
+    "Central app controller coordinates application flow and module communication",
+];
+const footer =
+    "Focused on clean code structure, scalability, and maintainability.";
+const iconsArray = [
+    {
+        src: "/color_icons/JavaScript.svg",
+        name: "Java Script",
+    },
+    {
+        src: "/color_icons/HTML5.svg",
+        name: "HTML",
+    },
+    {
+        src: "/color_icons/CSS3.svg",
+        name: "CSS",
+    },
+];
 ---
 
 <Layout>
-    <div
-        class="w-[100%] h-[85%] flex justify-around max-md:flex-col max-md:justify-between items-center"
-    >
-        <UnderConstruction />
-    </div>
+    <ProjectItem
+        projectName={"Expense-Tracker"}
+        videoSrc={sampleVideo}
+        icons={iconsArray}
+        title={title}
+        items={items}
+        footer={footer}
+        webLink="https://expense.pdeit.com/"
+        webLinkCont="expense.pdeit.com"
+        gitLink="https://github.com/ValkovD/Expense-Tracker"
+        gitLinkCont="Expense-Tracker"
+    />
 </Layout>

@@ -2,9 +2,20 @@
 import ProjectItem from "../../../components/ProjectItem.astro";
 import UnderConstruction from "../../../components/UnderConstruction.astro";
 import Layout from "../../../layouts/Layout.astro";
-const desc =
-    "This project is a modular, full-stack web application built using the MERN stack, featuring a React frontend and two independent Express.js backend services — one focused on user authentication and another dedicated to job tracking and analytics. The architecture is designed around a service-oriented structure, ensuring scalability, flexibility, and clear separation of responsibilities across components.";
-import sampleVideo from "../../../assets/video/videoplayback.mp4";
+// const desc =
+//     "This project is a modular, full-stack web application built using the MERN stack, featuring a React frontend and two independent Express.js backend services — one focused on user authentication and another dedicated to job tracking and analytics. The architecture is designed around a service-oriented structure, ensuring scalability, flexibility, and clear separation of responsibilities across components.";
+const title = "Full-stack job tracking application built with the MERN stack.";
+const items = [
+    "React frontend with modular and reusable component structure",
+    "Two independent Express.js backend services with separated responsibilities",
+    "Authentication service handling user registration, login, and authorization",
+    "Job tracking service managing job applications, analytics, and business logic",
+    "Service-oriented architecture designed for scalability and maintainability",
+    "Clear separation between frontend, authentication, and data management layers",
+];
+const footer =
+    "Focused on scalable full-stack architecture, clean API design, and separation of concerns.";
+import sampleVideo from "../../../assets/video/patrol_mate_video.mp4";
 const iconsArray = [
     {
         src: "/color_icons/React.svg",
@@ -32,11 +43,16 @@ const iconsArray = [
 <Layout>
     <ProjectItem
         projectName={"Patrol Mate"}
-        projectDescription={desc}
+        title={title}
+        items={items}
+        footer={footer}
         videoSrc={sampleVideo}
+        type="video/mp4"
         icons={iconsArray}
-        webLink="https://www.google.com/"
-        gitLink="https://github.com/ValkovD/job_counter"
+        webLink="https://patrolmate.pdeit.com/"
+        webLinkCont="patrolmate.pdeit.com"
+        gitLink="https://github.com/ValkovD/patrolmate"
+        gitLinkCont="ValkovD/patrolmate"
     />
     <!-- <UnderConstruction /> -->
 </Layout>

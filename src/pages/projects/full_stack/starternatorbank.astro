@@ -2,8 +2,20 @@
 import ProjectItem from "../../../components/ProjectItem.astro";
 import UnderConstruction from "../../../components/UnderConstruction.astro";
 import Layout from "../../../layouts/Layout.astro";
-const desc =
-    "This is a full-stack MERN application with a Node.js and Express backend connected to MongoDB via Mongoose. It features JWT-based authentication, password hashing with bcryptjs, and input validation using express-validator. The project uses the config package for environment-based settings and supports CORS for cross-origin communication. Development is streamlined with Nodemon for live reloading and Concurrently to run both the server and the React client simultaneously. It’s structured for scalability and clean separation of concerns.";
+// const desc =
+//     "This is a full-stack MERN application with a Node.js and Express backend connected to MongoDB via Mongoose. It features JWT-based authentication, password hashing with bcryptjs, and input validation using express-validator. The project uses the config package for environment-based settings and supports CORS for cross-origin communication. Development is streamlined with Nodemon for live reloading and Concurrently to run both the server and the React client simultaneously. It’s structured for scalability and clean separation of concerns.";
+const title = "Full-stack MERN application.";
+const items = [
+    "Express.js backend connected to MongoDB using Mongoose",
+    "JWT-based authentication and protected route handling",
+    "Password encryption implemented with bcryptjs",
+    "Input validation using express-validator middleware",
+    "Environment-based configuration managed with the config package",
+    "CORS support for secure frontend and backend communication",
+    "Concurrently and Nodemon used for efficient full-stack development workflow",
+];
+const footer =
+    "Focused on scalable backend architecture, secure authentication, and maintainable full-stack development practices.";
 import sampleVideo from "../../../assets/video/starternatorVideo.webm";
 const iconsArray = [
     {
@@ -32,10 +44,14 @@ const iconsArray = [
 <Layout>
     <ProjectItem
         projectName={"StarterNator Bank"}
-        projectDescription={desc}
         videoSrc={sampleVideo}
         icons={iconsArray}
+        title={title}
+        items={items}
+        footer={footer}
         webLink="https://starternator.pdeit.com/"
+        webLinkCont="starternator.pdeit.com"
         gitLink="https://github.com/ValkovD/StarterNator-Bank"
+        gitLinkCont="StarterNator-Bank"
     />
 </Layout>

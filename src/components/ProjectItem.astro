@@ -2,8 +2,19 @@
 import ColorIcon from "./ColorIcon.astro";
 import UnderConstruction from "./UnderConstruction.astro";
 
-const { projectName, projectDescription, videoSrc, icons, webLink, gitLink } =
-    Astro.props;
+const {
+    projectName,
+    projectDescription,
+    title,
+    items,
+    footer,
+    videoSrc,
+    icons,
+    webLink,
+    webLinkCont,
+    gitLink,
+    gitLinkCont,
+} = Astro.props;
 ---
 
 <div
@@ -13,63 +24,83 @@ const { projectName, projectDescription, videoSrc, icons, webLink, gitLink } =
         class="w-full max-w-[45%] h-[100%] max-md:max-w-[90%] flex flex-col items-center justify-between text-secondary"
     >
         <div
-            class="w-full max-w-[100%] h-[80%] p-4 bg-primary flex flex-col justify-between items-center rounded-md shadow-acent"
+            class="conainer w-full max-w-[100%] h-[100%] p-4 bg-primary flex flex-col justify-between items-center rounded-md shadow-acent"
         >
             <!-- Project info -->
             <header
-                class="text-49 max-md:text-49md max-sm:text-49sm text-acentOrange font-orbitron font-black text-shadow-acent"
+                class="text-39 max-md:text-49md max-sm:text-49sm text-acentOrange font-orbitron font-black text-shadow-acent"
             >
                 {projectName}
             </header>
 
-            <div
+            <!-- <div
                 class="text-center text-24 max-md:text-24md max-sm:text-24sm text-secondary font-code font-medium"
             >
                 {projectDescription}
+            </div> -->
+
+            <div class="flex flex-col text-left font-code">
+                <div>
+                    <h3 class="text-lg font-bold mb-2">{title}</h3>
+                </div>
+                <p
+                    class="list-disc pl-5 space-y-1 text-24 max-md:text-24md max-sm:text-24sm text-acentOrange font-code font-medium"
+                >
+                    Architecture highlights:
+                </p>
+                <ul
+                    class="list-disc pl-5 space-y-0 text-18 max-md:text-24md max-sm:text-24sm text-secondary font-code font-medium"
+                >
+                    {items.map((item: any) => <li>{item}</li>)}
+                </ul>
+
+                {
+                    footer && (
+                        <p class="text-16 max-md:text-20md max-sm:text-20sm font-bold">
+                            {footer}
+                        </p>
+                    )
+                }
             </div>
             <!-- links to project and code in git -->
             <div
-                class="text-center text-20 max-md:text-20md max-sm:text-16sm text-secondary font-code font-medium"
+                class="w-[100%] flex justify-around text-18 max-md:text-20md max-sm:text-16sm max-sm:flex-col text-secondary font-code font-bold"
             >
                 <a
-                    class="px-4 rounded-sm hover:text-acentOrange hover:bg-secondaryLight hover:scale-110 transition duration-200"
+                    class="p-1 text-center border border-acentOrange rounded-sm max-sm:mb-2 hover:text-acentOrange hover:bg-secondaryLight hover:scale-110 transition duration-200"
                     href={webLink}
                     target="_blank"
-                    ><span class="text-acentOrange">Try it @</span>
-                    {webLink}
+                    ><span class="text-acentOrange"></span>
+                    {webLinkCont}
                 </a>
-                <p></p>
+
                 <a
-                    class="px-4 rounded-sm hover:text-acentOrange hover:bg-secondaryLight hover:scale-104 transition duration-200"
+                    class="p-1 text-center border border-acentOrange rounded-sm hover:text-acentOrange hover:bg-secondaryLight hover:scale-104 transition duration-200"
                     href={gitLink}
                     target="_blank"
                 >
-                    <span class="text-acentOrange">Git repo @</span>
-                    My GitHub
+                    <span class="text-acentOrange">git:</span>
+                    {gitLinkCont}
                 </a>
             </div>
-        </div>
-        <!-- Tech Stack Icons -->
-        <div
-            class="w-full max-w-[100%] h-[20%] max-md:h-fit mt-4 p-2 bg-primary flex justify-around items-center rounded-md shadow-acent"
-        >
-            {
-                icons.map((icon) => {
-                    return (
-                        <div class="w-full max-w-[15%] h-[60%] max-md:w-[8%] max-md:h-[20%] max-sm:bg-secondaryLight max-sm:w-[18%] max-sm:h-[23%] flex flex-col items-center text-center ">
-                            <ColorIcon
-                                src={icon.src}
-                                alt={icon.alt}
-                                width={"80vw"}
-                                height={"80vh"}
-                            />
-                            <p class="font-code text-18 max-md:text-16md max-sm:text-18sm max-md:hidden">
+            <!-- Icon badges -->
+            <div
+                class="w-full max-w-[100%] h-[10%] max-md:h-fit mt-4 p-2 bg-primary flex justify-around items-center"
+            >
+                {
+                    icons.map((icon: any) => {
+                        return (
+                            <div class="w-[8%] h-[90%] max-sm:bg-secondaryLight flex items-center text-center ">
+                                <ColorIcon src={icon.src} alt={icon.alt} />
+                                {/* <p class="font-code text-18 max-md:text-16md max-sm:text-18sm max-md:hidden">
                                 {icon.name}
-                            </p>
-                        </div>
-                    );
-                })
-            }
+                            </p> */}
+                            </div>
+                        );
+                    })
+                }
+            </div>
+            <!-- icon badges -->
         </div>
     </div>
 
