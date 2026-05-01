@@ -12,7 +12,8 @@ RUN bun install
 COPY . ./
 
 # Build the Astro project using Bun
-RUN bun run astro build
+# RUN bun run astro build
+RUN bun run build
 
 # Stage 2: Serve with Nginx
 FROM nginx:alpine
